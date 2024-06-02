@@ -1,0 +1,256 @@
+{% extends "base.html" %}
+
+{% block title %}
+	Credit Card
+{% endblock title %}
+
+{% block content %}
+{% load static %}
+
+<html>
+
+
+<!-- =====================hamburgers MENU ============================================ -->
+
+{% load static %}
+
+<script src=" {% static 'js/jquery.min.js' %}"></script>
+      <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+      <script src="{% static 'js/jquery-3.0.0.min.js' %}"></script>
+      <script src="{% static 'js/custom.js' %}"></script>
+
+
+  <header>
+     <!-- header inner -->
+     <div class="head-top">
+        <div class="container-fluid">
+           <div class="row d_flex">
+              <div class="col-sm-3">
+                 <div class="logo">
+                    <!-- <a href="index.html"><img src="images/coep_logo.jpeg" /></a> -->
+                 </div>
+              </div>
+              <div class="col-sm-9">
+                 <ul class="email text_align_right">    
+                    <!-- <li><a href="Javascript:void(0)"><i class="fa fa-user" aria-hidden="true"></i></a></li> -->
+                    <!-- <li><a href="Javascript:void(0)"><i class="fa fa-search" aria-hidden="true"></i></a></li> -->
+                    <li> <button class="openbtn" onclick="openNav()"><img src="{% static 'images/menu_btn.png' %}"></button></li>
+                 </ul>
+              </div>
+           </div>
+        </div>
+     </div>
+  </header>
+
+
+  <div id="mySidepanel" class="sidepanel">
+     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"> ×</a>
+     <a class="active" href="{% url 'home' %}">Home</a>
+     <a href="{% url 'detection' %}">About the Model </a>
+     <a href="{% url 'classifier' %}">Classifer </a>
+     <a href="{% url 'classifier2' %}">Classifer (new)</a>
+     <!-- <a href="contact.html">Contact</a> -->
+  </div>
+
+
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+      <!-- style css -->
+      <link rel="stylesheet" href="{% static 'css/style.css' %}">
+      <!-- responsive-->
+      <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+      <!-- awesome fontfamily -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+ <!-- mobile metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+  <!-- site metas -->
+  <title>yogast</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!-- bootstrap css        {% static 'img/c1.jpg' %} -->
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <!-- style css -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <!-- responsive-->
+  
+  <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+  <!-- awesome fontfamily -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+
+
+
+
+
+<head>
+
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <script>
+      const submitBtn = document.querySelector('#submit-btn');
+      const loadingScreen = document.querySelector('#loading-screen');
+
+      submitBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        loadingScreen.style.display = 'block';
+        // Perform your form validation and submission logic here
+        // Once done, redirect to the next page
+        window.location.href = 'next-page.html';
+      });
+    </script>
+
+</head>
+<body>
+  <style>
+
+  .hero-section h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #0056b3;
+    text-shadow: 2px 2px 4px rgba(255, 0, 0, 0.5);
+  }
+  </style>
+<div class="hero-section text-center">
+<h1 style="text-align:center;">Fraud Detection</h1>
+</div>
+<style>
+
+.navbar {
+    background-color: #0056b3 !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar-brand,
+  .navbar-nav .nav-link {
+    color: #fff !important;
+    font-weight: 500;
+    font-size: 1.1rem;
+  }
+
+  .navbar-nav .nav-link:hover {
+    color: #f0f0f0 !important;
+  }
+
+</style>
+<form method="post" action="{% url 'classifier' %}">
+    {% csrf_token %}
+
+
+    <label for="v1">V1:</label>
+    <input type="text" name="v1" id="v1" required step="0.01">
+    <br>
+    <label for="v2">V2:</label>
+    <input type="text" name="v2" id="v2" required step="0.01">
+    <br>
+    <label for="v3">V3:</label>
+    <input type="text" name="v3" id="v3" required step="0.01">
+    <br>
+    <label for="v4">V4:</label>
+    <input type="text" name="v4" id="v4" required step="0.01">
+    <br>
+    <label for="v5">V5:</label>
+    <input type="text" name="v5" id="v5" required step="0.01">
+    <br>
+    <label for="v6">V6:</label>
+    <input type="text" name="v6" id="v6" required step="0.01">
+    <br>
+    <label for="v7">V7:</label>
+    <input type="text" name="v7" id="v7" required step="0.01">
+    <br>
+    <label for="v8">V8:</label>
+    <input type="text" name="v8" id="v8" required step="0.01">
+    <br>
+    <label for="v9">V9:</label>
+    <input type="text" name="v9" id="v9" required step="0.01">
+    <br>
+    <label for="v10">V10:</label>
+    <input type="text" name="v10" id="v10" required step="0.01">
+    <br>
+    <label for="v11">V11:</label>
+    <input type="text" name="v11" id="v11" required step="0.01">
+    <br>
+    <label for="v12">V12:</label>
+    <input type="text" name="v12" id="v12" required step="0.01">
+    <br>
+    <label for="v13">V13:</label>
+    <input type="text" name="v13" id="v13" required step="0.01">
+    <br>
+    <label for="v14">V14:</label>
+    <input type="text" name="v14" id="v14" required step="0.01">
+    <br>
+    <label for="v15">V15:</label>
+    <input type="text" name="v15" id="v15" required step="0.01">
+    <br>
+    <label for="v16">V16:</label>
+    <input type="text" name="v16" id="v16" required step="0.01">
+    <br>
+    <label for="v17">V17:</label>
+    <input type="text" name="v17" id="v17" required step="0.01">
+    <br>
+    <label for="v18">V18:</label>
+    <input type="text" name="v18" id="v18" required step="0.01">
+    <br>
+    <label for="v19">V19:</label>
+    <input type="text" name="v19" id="v19" required step="0.01">
+    <br>
+    <label for="v20">V20:</label>
+    <input type="text" name="v20" id="v20" required step="0.01">
+    <br>
+    <label for="v21">V21:</label>
+    <input type="text" name="v21" id="v21" required step="0.01">
+    <br>
+    <label for="v22">V22:</label>
+    <input type="text" name="v22" id="v22" required step="0.01">
+    <br>
+    <label for="v23">V23:</label>
+    <input type="text" name="v23" id="v23" required step="0.01">
+    <br>
+    <label for="v24">V24:</label>
+    <input type="text" name="v24" id="v24" required step="0.01">
+    <br>
+    <label for="v25">V25:</label>
+    <input type="text" name="v25" id="v25" required step="0.01">
+    <br>
+    <label for="v26">V26:</label>
+    <input type="text" name="v26" id="v26" required step="0.01">
+    <br>
+    <label for="v27">V27:</label>
+    <input type="text" name="v27" id="v27" required step="0.01">
+    <br>
+    <label for="v28">V28:</label>
+    <input type="text" name="v28" id="v28" required step="0.01">
+    <br>
+
+    <label for="amount">Amount:</label>
+    <input type="number" name="amount" id="amount" required>
+    <br>
+    <input type="submit" value="Predict" id="submit-button">
+</form>
+
+    <div id="loading-screen" style="display:none;">
+      <p>Checking if transaction is fraudulent or not</p>
+      <div class="progress-bar"></div>
+    </div>
+
+    </center>
+{% if prediction is not none %}
+{% if prediction == 1 %}
+<p>The transaction is fraudulent.</p>
+{% else %}
+<p>The transaction is not fraudulent.</p>
+{% endif %}
+{% endif %}
+</body>
+
+
+
+
+
+
+</html>
+
+{% endblock content %}

@@ -1,0 +1,5 @@
+First Dataset name creditcard.csv
+link=https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud
+
+Second Dataset name fraudTrain.csv
+link=https://www.kaggle.com/datasets/gerrysteven/fraudtrain

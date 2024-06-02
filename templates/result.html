@@ -1,0 +1,147 @@
+{% extends "base.html" %}
+
+{% block title %}
+	Credit Card
+{% endblock title %}
+
+{% block content %}
+{% load static %}
+
+<!-- =============================HAMBURGER MENU ==================================================== -->
+
+{% load static %}
+
+<script src=" {% static 'js/jquery.min.js' %}"></script>
+      <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+      <script src="{% static 'js/jquery-3.0.0.min.js' %}"></script>
+      <script src="{% static 'js/custom.js' %}"></script>
+
+
+  <header>
+     <!-- header inner -->
+     <div class="head-top">
+        <div class="container-fluid">
+           <div class="row d_flex">
+              <div class="col-sm-3">
+                 <div class="logo">
+                    <!-- <a href="index.html"><img src="images/coep_logo.jpeg" /></a> -->
+                 </div>
+              </div>
+              <div class="col-sm-9">
+                 <ul class="email text_align_right">    
+                    <!-- <li><a href="Javascript:void(0)"><i class="fa fa-user" aria-hidden="true"></i></a></li> -->
+                    <!-- <li><a href="Javascript:void(0)"><i class="fa fa-search" aria-hidden="true"></i></a></li> -->
+                    <li> <button class="openbtn" onclick="openNav()"><img src="{% static 'images/menu_btn.png' %}"></button></li>
+                 </ul>
+              </div>
+           </div>
+        </div>
+     </div>
+  </header>
+
+
+  <div id="mySidepanel" class="sidepanel">
+     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"> ×</a>
+     <a class="active" href="{% url 'home' %}">Home</a>
+     <a href="{% url 'detection' %}">About the Model </a>
+     <a href="{% url 'classifier' %}">Classifer </a>
+     <a href="{% url 'classifier2' %}">Classifer (new)</a>
+     <!-- <a href="contact.html">Contact</a> -->
+  </div>
+
+
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+      <!-- style css -->
+      <link rel="stylesheet" href="{% static 'css/style.css' %}">
+      <!-- responsive-->
+      <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+      <!-- awesome fontfamily -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+ <!-- mobile metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+  <!-- site metas -->
+  <title>yogast</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!-- bootstrap css        {% static 'img/c1.jpg' %} -->
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <!-- style css -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <!-- responsive-->
+  
+  <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+  <!-- awesome fontfamily -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'green.css' %}">
+</head>
+<style>
+  .ball {
+  position: absolute;
+  border-radius: 100%;
+  opacity: 0.7;
+}
+</style>
+<body>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2" width="300" height="300">
+  <circle class="path circle" fill="none" stroke="#73AF55" stroke-width="6" stroke-miterlimit="10" cx="65.1" cy="65.1" r="62.1"/>
+  <polyline class="path check" fill="none" stroke="#73AF55" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" points="100.2,40.2 51.5,88.8 29.8,67.5 "/>
+</svg>
+
+<p class="success">Transaction is NOT Fraudulent!</p>
+
+
+</body>
+<script>
+  // Some random colors
+const colors = ["#3CC157"];
+
+const numBalls = 50;
+const balls = [];
+
+for (let i = 0; i < numBalls; i++) {
+  let ball = document.createElement("div");
+  ball.classList.add("ball");
+  ball.style.background = colors[Math.floor(Math.random() * colors.length)];
+  ball.style.left = `${Math.floor(Math.random() * 100)}vw`;
+  ball.style.top = `${Math.floor(Math.random() * 100)}vh`;
+  ball.style.transform = `scale(${Math.random()})`;
+  ball.style.width = `${Math.random()}em`;
+  ball.style.height = ball.style.width;
+
+  balls.push(ball);
+  document.body.append(ball);
+}
+
+// Keyframes
+balls.forEach((el, i, ra) => {
+  let to = {
+    x: Math.random() * (i % 2 === 0 ? -11 : 11),
+    y: Math.random() * 12
+  };
+
+  let anim = el.animate(
+    [
+      { transform: "translate(0, 0)" },
+      { transform: `translate(${to.x}rem, ${to.y}rem)` }
+    ],
+    {
+      duration: (Math.random() + 1) * 2000, // random duration
+      direction: "alternate",
+      fill: "both",
+      iterations: Infinity,
+      easing: "ease-in-out"
+    }
+  );
+});
+</script>
+
+{% endblock content %}
